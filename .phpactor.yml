@@ -1,0 +1,3 @@
+code_transform.class_new.variants:
+    sf-controller: symfony_controller
+    sf-entity: symfony_entity

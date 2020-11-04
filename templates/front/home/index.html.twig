@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+  <h1 class="page-title">Welcome home !</h1>
+
+  <h2 class="The articles">List of articles</h2>
+
+  {% for article in articles %}
+      <article class="article">
+          {{ article.title }}
+          <small>created : {{ article.createdAt|date('y M YY') }}</small>
+      </article>
+  {% endfor %}
+
+{% endblock %}
