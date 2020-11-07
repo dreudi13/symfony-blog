@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <h1 class="front-page-tile">List of articles</h1>
+    <p class="front-page-create-link">
+        <a class="" href="{{ path('admin_article_create') }}">create your own !</a>
+    </p>
+
+    {% for article in articles %}
+        <div class="article-card shadow-sm border border-1 rounded">
+            <article class="article">
+                <h2 class="article-card-title">{{ '#' ~ article.id ~ ' ' ~ article.title }}</h2>
+                <small>created : {{ article.createdAt|date('d M y') }}</small>
+            </article>
+        </div>
+    {% endfor %}
+
+{% endblock %}

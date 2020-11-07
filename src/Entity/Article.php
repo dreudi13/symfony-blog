@@ -7,6 +7,7 @@ use App\Repository\ArticleRepository;
 use DateTime;
 use DateTimeImmutable;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=ArticleRepository::class)
@@ -23,11 +24,25 @@ class Article
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 2,
+     *      max = 255,
+     *      minMessage = "Your title must be at least {{ limit }} characters long",
+     *      maxMessage = "Your title cannot be longer than {{ limit }} characters",
+     *      allowEmptyString = false
+     * )
      */
     private ?string $title = null;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank
+     * @Assert\Length(
+     *      min = 5,
+     *      minMessage = "Your content must be at least {{ limit }} characters long",
+     *      allowEmptyString = false
+     * )
      */
     private ?string $content = null;
 

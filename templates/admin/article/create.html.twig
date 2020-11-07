@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <h1 class="admin-page-title">Create your own Article</h1>
+
+    <form class="admin-form" method="POST">
+        {{ form_row(article_form.title) }}
+        {{ form_row(article_form.content) }}
+        {{ form_rest(article_form) }}
+        <button type="submit" class="btn btn-primary">create</button>
+    </form>
+
+{% endblock %}

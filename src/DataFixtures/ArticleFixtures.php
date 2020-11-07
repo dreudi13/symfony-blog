@@ -12,7 +12,7 @@ class ArticleFixtures extends Fixture
     {
         for ($i = 0; $i < 50; $i++) {
             $article = (new Article)
-                ->setTitle("Title $1")
+                ->setTitle("Title $i")
                 ->setContent("Content $i...")
             ;
 
